@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Règles du Kaizo IronMon</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@600;800&family=Source+Sans+3:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f6f5f3;--surface:#fff;--text:#1c1b1a;--muted:#6b6862;--line:#e2dfda;--accent:#c4161c;--accent-soft:#fbe9ea;--hl:#ffe58a;color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#161515;--surface:#1f1d1d;--text:#efece8;--muted:#a09b94;--line:#33302f;--accent:#ff5a5f;--accent-soft:#3a1d1f;--hl:#6b5a14;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#161515;--surface:#1f1d1d;--text:#efece8;--muted:#a09b94;--line:#33302f;--accent:#ff5a5f;--accent-soft:#3a1d1f;--hl:#6b5a14;color-scheme:dark}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:calc(env(safe-area-inset-top,0px) + 120px)}
+body{margin:0;background:var(--bg);color:var(--text);font:17px/1.6 "Source Sans 3",system-ui,-apple-system,"Segoe UI",sans-serif}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:10}
+header{max-width:780px;margin:0 auto;padding:40px 20px 8px}
+h1,h2{font-family:"Bricolage Grotesque",system-ui,sans-serif;line-height:1.1;margin:0}
+h1{font-size:clamp(2.2rem,7vw,3.4rem);font-weight:800;letter-spacing:-.02em}
+h1 span{color:var(--accent)}
+.lead{color:var(--muted);margin:12px 0 20px;max-width:60ch}
+blockquote{margin:0 0 24px;padding:14px 18px;border-left:5px solid var(--accent);background:var(--accent-soft);font-weight:600}
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:11;background:var(--bg);border-bottom:1px solid var(--line)}
+.bar-in{max-width:780px;margin:0 auto;padding:10px 20px}
+.search{width:100%;font:inherit;padding:10px 14px;border:1px solid var(--line);border-radius:8px;background:var(--surface);color:var(--text)}
+.search:focus-visible,a:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+nav{display:flex;gap:8px;overflow-x:auto;padding-top:10px;scrollbar-width:thin}
+nav a{flex:none;text-decoration:none;color:var(--text);border:1px solid var(--line);background:var(--surface);padding:5px 12px;border-radius:999px;font-size:.92rem;font-weight:600}
+nav a:hover{border-color:var(--accent);color:var(--accent)}
+main{max-width:780px;margin:0 auto;padding:12px 20px 60px}
+section{margin-top:36px}
+h2{font-size:1.6rem;font-weight:800;padding-bottom:8px;border-bottom:3px solid var(--accent);margin-bottom:6px}
+ul{list-style:none;margin:0;padding:0}
+li{display:grid;grid-template-columns:2.2rem 1fr;gap:6px;padding:14px 0;border-bottom:1px solid var(--line)}
+li>i{font-style:normal;font-size:1.35rem;line-height:1.4}
+li strong{display:block;font-weight:700}
+li p{margin:2px 0 0}
+li em{font-style:normal;color:var(--muted);font-size:.95rem}
+.no strong{color:var(--accent)}
+mark{background:var(--hl);color:inherit;border-radius:2px}
+.empty{display:none;margin-top:30px;color:var(--muted);text-align:center}
+.spirit{margin-top:36px;padding:18px;border:2px solid var(--accent);border-radius:10px}
+.spirit h2{border:0;padding:0;margin-bottom:6px}
+.spirit p{margin:0}
+@media (max-width:520px){body{font-size:16px}header{padding-top:28px}}
+@media print{.bar{display:none}}
+</style>
+</head>
+<body>
+<header>
+<h1>Règles du <span>Kaizo</span> IronMon</h1>
+<p class="lead">Le niveau le plus dur de l’IronMon, le défi créé par iateyourpie sur un jeu Pokémon passé au randomizer. Toutes les règles qui s’appliquent, y compris celles reprises des niveaux Standard et Ultimate. Quand le Kaizo remplace une règle, seule sa version Kaizo est écrite.</p>
+<blockquote>« Ces règles sont faites pour être absurdement dures. Elles ne sont pas censées être justes, ni même amusantes. Et elles ne se négocient pas. »</blockquote>
+</header>
+
+<div class="bar"><div class="bar-in">
+<input class="search" id="q" type="search" placeholder="Chercher une règle (ex. shiny, CT, boutique…)" aria-label="Chercher une règle">
+<nav aria-label="Sections">
+<a href="#partie">🎲 La partie</a>
+<a href="#starter">🐣 Starter</a>
+<a href="#sauvages">🌿 Sauvages et pivots</a>
+<a href="#combats">⚔️ Combats</a>
+<a href="#soins">💊 Soins et lieux</a>
+<a href="#esprit">❓ Esprit</a>
+</nav>
+</div></div>
+
+<main>
+<section id="partie">
+<h2>🎲 La partie</h2>
+<ul>
+<li><i>🎲</i><div><strong>Tout est randomisé</strong><p>Pokémon, attaques, objets. Dresseurs et sauvages ont <b>+50 % de niveau</b>, et les boss ont <b>3 Pokémon de plus</b>. Les Pokémon fixes ne sont pas montés de niveau, les évolutions ne sont pas facilitées, et l’évolution finale est forcée au <b>niveau 30</b>.</p></div></li>
+<li class="no"><i>☠️</i><div><strong>K.O. = fin de run</strong><p>Ton Pokémon est K.O., la run est finie. On recommence sur un nouveau jeu.</p></div></li>
+<li><i>💪</i><div><strong>Pas de reset au premier combat</strong><p>Pas de reset avant le premier combat parce que le starter ne plaît pas.</p></div></li>
+<li><i>👩</i><div><strong>Maman</strong><p>On va parler à Maman avant de partir.</p></div></li>
+</ul>
+</section>
+
+<section id="starter">
+<h2>🐣 Le starter et ton Pokémon</h2>
+<ul>
+<li><i>🎰</i><div><strong>Starter au hasard</strong><p>Choisi avant de regarder les trois.</p></div></li>
+<li><i>⭐</i><div><strong>4 favoris (HeartGold/SoulSilver)</strong><p>Si l’un d’eux fait partie des trois starters, tu peux le prendre. Un seul légendaire est permis dans la liste, sous <b>600 de total de stats (BST)</b>.</p></div></li>
+<li><i>😈</i><div><strong>Némésis</strong><p>Tu choisis un Pokémon ennemi juré. Tu ne peux jamais le capturer, tu peux le tuer <b>une fois par run</b> dans la nature, et s’il apparaît au labo, tu dois prendre le starter qui le combat (sauf si un favori est disponible).</p></div></li>
+<li><i>☝️</i><div><strong>Un seul Pokémon à la fois</strong><p>Seuls les amis CS peuvent t’accompagner, pour utiliser leurs CS hors combat et rien d’autre (ni combat, ni talent comme Ramassage).</p></div></li>
+<li class="no"><i>🚫</i><div><strong>Pokémon interdits</strong><p>Légendaires, mythiques et sous-légendaires (sauf le favori), et tout Pokémon de <b>599 de BST ou plus</b>. Si ton Pokémon évolue en légendaire ou au-delà de 600, il reste jouable.</p></div></li>
+<li><i>🌱</i><div><strong>Évolutions et croissance</strong><p>On n’annule jamais une évolution, et tous les Pokémon ont la croissance « Fluctuante ».</p></div></li>
+</ul>
+</section>
+
+<section id="sauvages">
+<h2>🌿 Les sauvages et les pivots</h2>
+<ul>
+<li class="no"><i>🌿</i><div><strong>Capture SEULEMENT, aucun sauvage mis K.O.</strong><p>On ne combat pas les Pokémon sauvages : on les capture ou on fuit. Une explosion arrive, mais on évite à tout prix de mettre un sauvage K.O. Deux exceptions : ta Némésis (une fois par run) et les shinies.</p></div></li>
+<li><i>✨</i><div><strong>Clause shiny</strong><p>Un shiny croisé peut être mis K.O. pour l’expérience, en bonus. <em>C’est l’usage de la communauté française, qui garde cette règle du Standard en Kaizo. Par exemple, tout le monde tue le Pokémon qui remplace le Léviator rouge du Lac Colère.</em></p></div></li>
+<li><i>🎯</i><div><strong>Une capture par route</strong><p>Une seule capture par route, pas forcément le premier Pokémon croisé.</p></div></li>
+<li><i>🔄</i><div><strong>Pivot</strong><p>Pour changer de Pokémon, tu t’engages sur le nouveau <b>dès la capture</b>, avant de regarder ses stats.</p></div></li>
+<li><i>⚖️</i><div><strong>Limite de niveau</strong><p>On ne capture pas un Pokémon de plus de <b>4 niveaux</b> au-dessus du tien.</p></div></li>
+<li><i>📦</i><div><strong>Capture par erreur</strong><p>Range-le au PC sans regarder ses stats ni ses attaques, et continue.</p></div></li>
+<li><i>😬</i><div><strong>K.O. par erreur en repérant un pivot</strong><p>La run continue, mais tu dois pivoter sur un Pokémon de cette route avant d’en partir, sans te soigner avant.</p></div></li>
+</ul>
+</section>
+
+<section id="combats">
+<h2>⚔️ Les combats</h2>
+<ul>
+<li><i>📀</i><div><strong>Attaques autorisées</strong><p>Seulement celles que le Pokémon apprend seul, plus les <b>CT données par les champions d’arène</b>. Aucune autre CT, aucun Donneur de capacités, et aucune attaque de CS en combat.</p></div></li>
+<li class="no"><i>🚫</i><div><strong>Attaques interdites</strong><p>Toutes les attaques de soin (Soin, Lait à boire, Vampipoing, Vampigraine, Rafraîchissement, Aromathérapie…), Spore et Assistance. Permises seulement via Métronome ou Copie.</p></div></li>
+<li><i>💥</i><div><strong>Coloforce / Force Pure</strong><p>Aucune attaque physique avec ces talents. Ça ne s’applique pas aux Pokémon de 399 de BST ou moins, ni à ceux de 400 à 410 qui évolueront.</p></div></li>
+<li><i>⚙️</i><div><strong>Mode « Défini »</strong><p>Combats en mode « Défini » dans les options du jeu.</p></div></li>
+<li><i>🔁</i><div><strong>Pas de revanche</strong><p>Pas de revanche contre un dresseur déjà battu.</p></div></li>
+<li><i>🎨</i><div><strong>Gribouille</strong><p>Pas d’abus du Maître des capacités pour réapprendre Gribouille.</p></div></li>
+<li><i>🧪</i><div><strong>Exception du labo</strong><p>Pendant le combat contre le rival au labo, attaques, talents et objets interdits sont tolérés.</p></div></li>
+</ul>
+</section>
+
+<section id="soins">
+<h2>💊 Soins, objets et lieux</h2>
+<ul>
+<li class="no"><i>💊</i><div><strong>Aucun objet de soin hors combat</strong><p>PV, statuts et PP. PP Plus et PP Max restent permis.</p></div></li>
+<li><i>🛒</i><div><strong>Boutiques</strong><p>Seulement <b>Poké Balls et Repousses</b>, et sans contourner la règle (faire acheter par Maman, échanger des Balls contre des soins…).</p></div></li>
+<li><i>🎒</i><div><strong>Objets tenus permis</strong><p>Ceux qui se consomment (baies, Herbe Blanche…, mais pas la Ceinture Force), les objets d’évolution le temps d’évoluer, et la Boule Fumée.</p></div></li>
+<li class="no"><i>🚫</i><div><strong>Objets interdits</strong><p>Œuf Chance, Cendre Sacrée, Restes, Rosée Âme, Pierre Stase, et les flûtes pour soigner les statuts.</p></div></li>
+<li><i>🏟️</i><div><strong>Arène sans retour</strong><p>Une fois entré, on ne ressort pas avant d’avoir battu tous les dresseurs.</p></div></li>
+<li><i>🕳️</i><div><strong>Donjons en un seul passage</strong><p>Repaires, grottes, bâtiments avec dresseurs ; les forêts ne comptent pas. Sauf si l’histoire oblige à revenir.</p></div></li>
+<li><i>🏥</i><div><strong>Pas de soin dans les donjons</strong><p>PNJ soigneur, lit… sauf les soins imposés par l’histoire.</p></div></li>
+</ul>
+</section>
+
+<section id="esprit" class="spirit">
+<h2>❓ L’esprit du défi</h2>
+<p>Une petite erreur ne disqualifie pas forcément la run : on garde l’esprit du défi, et si l’erreur t’a avantagé, tu t’infliges une <b>pénalité équivalente</b>.</p>
+</section>
+
+<p class="empty" id="empty">Aucune règle ne correspond à cette recherche.</p>
+</main>
+
+<script>
+(function(){
+var q=document.getElementById('q'),items=[].slice.call(document.querySelectorAll('li')),secs=[].slice.call(document.querySelectorAll('section')),empty=document.getElementById('empty');
+var store=items.map(function(li){return li.innerHTML});
+function norm(s){return s.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'')}
+function esc(s){return s.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')}
+q.addEventListener('input',function(){
+var v=norm(q.value.trim()),any=false;
+items.forEach(function(li,i){
+li.innerHTML=store[i];
+var ok=!v||norm(li.textContent).indexOf(v)>-1;
+li.style.display=ok?'':'none';
+if(ok)any=true;
+});
+secs.forEach(function(s){
+var vis=!v||[].some.call(s.querySelectorAll('li'),function(l){return l.style.display!=='none'})||(!s.querySelector('li')&&norm(s.textContent).indexOf(v)>-1);
+s.style.display=vis?'':'none';
+});
+empty.style.display=(v&&!any)?'block':'none';
+});
+})();
+</script>
+</body>
+</html>
